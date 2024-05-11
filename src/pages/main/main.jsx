@@ -17,7 +17,9 @@ const Main = () => {
                 <div className={s.content}>
                     <div className={s.container}>
                         <div className={s.contentWrapper}>
-                            <img className={s.logo} src={logo}/>
+                            <a className={s.logo} href={'/'}>
+                                <img src={logo}/>
+                            </a>
                             <div className={s.information}>
                                 <div className={s.informationWrapper}>
                                     <div className={s.information__title}>
