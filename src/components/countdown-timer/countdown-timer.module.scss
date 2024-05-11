@@ -1,33 +1,53 @@
 .countdownTimerWrapper {
   display: flex;
+  .timerWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: center;
 
-    .timerWrapper {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      justify-items: center;
-
-      .timer {
-        line-height: 1;
-        color: #162C4E;
-        font-weight: 500;
-        font-size: 72px;
-      }
-      .colon {
-        line-height: 1;
-        color: #162C4E;
-        font-weight: 500;
-        font-size: 72px;
-      }
-    }
-  .secondsWrapper {
-    display: flex;
-    flex-direction: column;
-   align-items: center;
     .timer {
       line-height: 1;
       color: #162C4E;
       font-weight: 500;
       font-size: 72px;
+      @media  (max-width:768px)  {
+        font-size: 36px;
+      }
+      @media (max-width: 500px) {
+        font-size: 18px;
+      }
+    }
+
+    .colon {
+      line-height: 1;
+      color: #162C4E;
+      font-weight: 500;
+      font-size: 72px;
+      @media (max-width: 768px)  {
+        font-size: 36px;
+      }
+      @media (max-width: 500px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .secondsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .timer {
+      line-height: 1;
+      color: #162C4E;
+      font-weight: 500;
+      font-size: 72px;
+      @media  (max-width:768px)  {
+        font-size: 36px;
+      }
+      @media (max-width: 500px) {
+        font-size: 18px;
+      }
     }
 
   }

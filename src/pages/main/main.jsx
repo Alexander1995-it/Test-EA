@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from '../../common/icons/logo.svg'
 import s from './main.module.scss'
 import CountdownTimer from "../../components/countdown-timer/countdown-timer";
 import {EventButton} from "../../components/ui/event-button/event-button";
 import {TextField} from "../../components/ui/text-field/text-field";
+import {Popup} from "../../components/popup/popup";
+import leftDecoration from '../../common/icons/left-decoration.svg'
+import rightDecoration from '../../common/icons/right-decoration.svg'
+
 
 const Main = () => {
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <div className={s.main}>
             <div className={s.mainWrapper}>
@@ -26,20 +31,23 @@ const Main = () => {
                             <div className={s.countdownTimer}><CountdownTimer/></div>
                             <div className={s.eventSection}>
                                 <div className={s.eventSection__text}>Check our event page when you wait:</div>
-                                <EventButton>Go to the event</EventButton>
+                                <EventButton href="https://www.google.com/" target="_blank">Go to the
+                                    event</EventButton>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div className={s.footer}>
                     <div className={s.container}>
                         <div className={s.footer__field}>
-                            <TextField placeholder={'Enter your Email and get notified'}/>
+                            <TextField setIsOpen={setIsOpen} placeholder={'Enter your Email and get notified'}/>
                         </div>
                     </div>
                 </div>
             </div>
+            {isOpen && <Popup setIsOpen={setIsOpen}/>}
+            <img className={s.leftDecoration} src={leftDecoration}/>
+            <img className={s.rightDecoration} src={rightDecoration}/>
         </div>
     );
 };
